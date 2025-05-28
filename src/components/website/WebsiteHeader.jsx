@@ -28,8 +28,8 @@ const WebsiteHeader = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Initial animation
@@ -44,7 +44,7 @@ const WebsiteHeader = () => {
       logoRef.current.style.opacity = 1;
     }
     if (navItemsRef.current && navItemsRef.current.children) {
-      Array.from(navItemsRef.current.children).forEach(child => {
+      Array.from(navItemsRef.current.children).forEach((child) => {
         child.style.opacity = 1;
       });
     }
@@ -87,11 +87,10 @@ const WebsiteHeader = () => {
     } catch (error) {
       console.error("Animation error:", error);
       // Make sure everything is visible if animations fail
-      gsap.set([
-        headerRef.current, 
-        logoRef.current, 
-        navItemsRef.current?.children
-      ], { opacity: 1, y: 0 });
+      gsap.set(
+        [headerRef.current, logoRef.current, navItemsRef.current?.children],
+        { opacity: 1, y: 0 }
+      );
     }
   }, []);
 
@@ -130,25 +129,22 @@ const WebsiteHeader = () => {
   };
 
   return (
-    <div 
+    <div
       ref={headerRef}
       className={`py-4 fixed top-0 w-full backdrop-blur-md z-50 text-white transition-all duration-300 ${
-        scrolled ? "bg-secondary/90 shadow-lg shadow-black/10 py-3" : "bg-secondary/60 py-4"
+        scrolled
+          ? "bg-secondary/90 shadow-lg shadow-black/10 py-3"
+          : "bg-secondary/60 py-4"
       }`}
     >
       <div className="wrapper flex justify-between items-center gap-10">
         <div className="flex justify-between items-center gap-20 w-full pl-[1rem] lg:pl-0">
           <Helmet>
             {/* Preload the logo image */}
-            <link
-              rel="preload"
-              href={logoImg}
-              as="image"
-              type="image/png"
-            />
+            <link rel="preload" href={logoImg} as="image" type="image/png" />
           </Helmet>
           <div ref={logoRef} style={{ opacity: 1 }}>
-            <LogoFallback 
+            <LogoFallback
               src={logoImg}
               alt="Code Sena Logo"
               className="h-[3rem] md:h-[4.5rem] scale-110 object-contain transition-transform duration-300 hover:scale-[1.35]"
@@ -164,7 +160,9 @@ const WebsiteHeader = () => {
                 <Link
                   to={`${option.path}`}
                   className={`text-sm animated-underline transition-colors duration-300 ${
-                    option.path === pathname ? "text-primary font-medium" : "text-white/90 hover:text-white"
+                    option.path === pathname
+                      ? "text-primary font-medium"
+                      : "text-white/90 hover:text-white"
                   }`}
                   key={option.path}
                 >
@@ -212,10 +210,6 @@ const WebsiteHeader = () => {
               </Link>
             ))}
           </div>
-          
-          {/* Decorative elements */}
-          <div className="absolute bottom-10 left-10 w-40 h-40 rounded-full bg-primary/5 blur-3xl -z-10"></div>
-          <div className="absolute top-1/4 right-10 w-20 h-20 rounded-full bg-primary/5 blur-2xl -z-10"></div>
         </Drawer>
         <button
           className="block lg:hidden justify-self-end"
