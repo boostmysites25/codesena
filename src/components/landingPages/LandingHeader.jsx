@@ -245,9 +245,6 @@ const LandingHeader = () => {
             ))}
           </div>
           
-          {/* Decorative elements */}
-          <div className="absolute bottom-10 left-10 w-40 h-40 rounded-full bg-primary/5 blur-3xl -z-10"></div>
-          <div className="absolute top-1/4 right-10 w-20 h-20 rounded-full bg-primary/5 blur-2xl -z-10"></div>
         </Drawer>
         <button
           className="block lg:hidden justify-self-end"
