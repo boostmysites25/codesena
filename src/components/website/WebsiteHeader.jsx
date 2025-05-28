@@ -151,7 +151,7 @@ const WebsiteHeader = () => {
             <LogoFallback 
               src={logoImg}
               alt="Code Sena Logo"
-              className="h-[3rem] md:h-[3.75rem] scale-125 object-contain transition-transform duration-300 hover:scale-[1.35]"
+              className="h-[3rem] md:h-[4.5rem] scale-110 object-contain transition-transform duration-300 hover:scale-[1.35]"
               fallbackText="Code Sena"
               width="150"
               height="100"
