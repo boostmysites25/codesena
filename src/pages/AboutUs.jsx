@@ -100,7 +100,7 @@ const AboutUs = () => {
             data-aos="fade-up"
             className="flex items-center lg:items-start flex-col gap-7"
           >
-            <h3 className="text-xl font-medium text-primary mb-4">
+            <h3 className="heading-2 text-primary mb-4">
               Smart, Secure, and Scalable
             </h3>
             <p className="desc">
