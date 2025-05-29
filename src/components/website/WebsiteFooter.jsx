@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { companyDetails, logoImg, routes } from "../../constant";
+import { companyDetails, logoImg } from "../../constant";
 import {
   ChevronRight,
   Instagram,
@@ -16,6 +16,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LogoFallback from "../ui/LogoFallback";
 import DecorativeElements from "../ui/DecorativeElements";
+import { websiteLinks } from "./WebsiteHeader";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -36,22 +37,22 @@ const WebsiteFooter = () => {
       logoRef.current.style.opacity = 1;
     }
     if (socialRef.current) {
-      Array.from(socialRef.current.children).forEach(child => {
+      Array.from(socialRef.current.children).forEach((child) => {
         child.style.opacity = 1;
       });
     }
     if (linksRef.current) {
-      const linkItems = linksRef.current.querySelectorAll('li');
+      const linkItems = linksRef.current.querySelectorAll("li");
       if (linkItems && linkItems.length > 0) {
-        linkItems.forEach(item => {
+        linkItems.forEach((item) => {
           item.style.opacity = 1;
         });
       }
     }
     if (contactRef.current) {
-      const contactItems = contactRef.current.querySelectorAll('li');
+      const contactItems = contactRef.current.querySelectorAll("li");
       if (contactItems && contactItems.length > 0) {
-        contactItems.forEach(item => {
+        contactItems.forEach((item) => {
           item.style.opacity = 1;
         });
       }
@@ -64,23 +65,25 @@ const WebsiteFooter = () => {
     const createAnimation = () => {
       // Logo animation
       if (logoRef.current) {
-        gsap.fromTo(logoRef.current, 
+        gsap.fromTo(
+          logoRef.current,
           { y: 30, opacity: 0 },
-          { 
-            y: 0, 
-            opacity: 1, 
+          {
+            y: 0,
+            opacity: 1,
             duration: 0.8,
             scrollTrigger: {
               trigger: footerRef.current,
               start: "top 80%",
-            }
+            },
           }
         );
       }
 
       // Social icons animation
       if (socialRef.current && socialRef.current.children.length > 0) {
-        gsap.fromTo(socialRef.current.children,
+        gsap.fromTo(
+          socialRef.current.children,
           { scale: 0.5, opacity: 0 },
           {
             scale: 1,
@@ -91,15 +94,16 @@ const WebsiteFooter = () => {
             scrollTrigger: {
               trigger: socialRef.current,
               start: "top 85%",
-            }
+            },
           }
         );
       }
 
       // Links animation
-      const linkItems = linksRef.current?.querySelectorAll('li');
+      const linkItems = linksRef.current?.querySelectorAll("li");
       if (linkItems && linkItems.length > 0) {
-        gsap.fromTo(linkItems,
+        gsap.fromTo(
+          linkItems,
           { x: -20, opacity: 0 },
           {
             x: 0,
@@ -109,15 +113,16 @@ const WebsiteFooter = () => {
             scrollTrigger: {
               trigger: linksRef.current,
               start: "top 85%",
-            }
+            },
           }
         );
       }
 
       // Contact items animation
-      const contactItems = contactRef.current?.querySelectorAll('li');
+      const contactItems = contactRef.current?.querySelectorAll("li");
       if (contactItems && contactItems.length > 0) {
-        gsap.fromTo(contactItems,
+        gsap.fromTo(
+          contactItems,
           { x: 20, opacity: 0 },
           {
             x: 0,
@@ -127,14 +132,15 @@ const WebsiteFooter = () => {
             scrollTrigger: {
               trigger: contactRef.current,
               start: "top 85%",
-            }
+            },
           }
         );
       }
 
       // Copyright animation
       if (copyrightRef.current) {
-        gsap.fromTo(copyrightRef.current,
+        gsap.fromTo(
+          copyrightRef.current,
           { opacity: 0 },
           {
             opacity: 1,
@@ -143,7 +149,7 @@ const WebsiteFooter = () => {
             scrollTrigger: {
               trigger: copyrightRef.current,
               start: "top 95%",
-            }
+            },
           }
         );
       }
@@ -155,25 +161,32 @@ const WebsiteFooter = () => {
     } catch (error) {
       console.error("Animation error:", error);
       // Make sure everything is visible if animations fail
-      gsap.set([
-        logoRef.current, 
-        socialRef.current?.children, 
-        linksRef.current?.querySelectorAll('li'),
-        contactRef.current?.querySelectorAll('li'),
-        copyrightRef.current
-      ], { opacity: 1 });
+      gsap.set(
+        [
+          logoRef.current,
+          socialRef.current?.children,
+          linksRef.current?.querySelectorAll("li"),
+          contactRef.current?.querySelectorAll("li"),
+          copyrightRef.current,
+        ],
+        { opacity: 1 }
+      );
     }
 
     return () => {
       // Clean up ScrollTrigger instances
       try {
-        ScrollTrigger.getAll().forEach(trigger => {
-          if (trigger && trigger.vars && trigger.vars.trigger && 
-              (trigger.vars.trigger === footerRef.current ||
+        ScrollTrigger.getAll().forEach((trigger) => {
+          if (
+            trigger &&
+            trigger.vars &&
+            trigger.vars.trigger &&
+            (trigger.vars.trigger === footerRef.current ||
               trigger.vars.trigger === socialRef.current ||
               trigger.vars.trigger === linksRef.current ||
               trigger.vars.trigger === contactRef.current ||
-              trigger.vars.trigger === copyrightRef.current)) {
+              trigger.vars.trigger === copyrightRef.current)
+          ) {
             trigger.kill();
           }
         });
@@ -186,7 +199,7 @@ const WebsiteFooter = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -194,15 +207,15 @@ const WebsiteFooter = () => {
     <footer ref={footerRef} className="py-[4rem] relative bg-secondary/80">
       {/* Top gradient */}
       <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-secondary to-transparent z-[1]"></div>
-      
+
       {/* Decorative elements using the new component */}
-      <DecorativeElements 
-        variant="default" 
-        animated={true} 
+      <DecorativeElements
+        variant="default"
+        animated={true}
         className="z-[5]"
         style={{ opacity: 1 }}
       />
-      
+
       <div className="wrapper flex lg:flex-row flex-col gap-10 sm:gap-14 justify-between">
         <div className="max-w-xs">
           <Helmet>
@@ -210,7 +223,7 @@ const WebsiteFooter = () => {
             <link rel="preload" href={logoImg} as="image" type="image/png" />
           </Helmet>
           <div ref={logoRef} style={{ opacity: 1 }}>
-            <LogoFallback 
+            <LogoFallback
               src={logoImg}
               alt="Code Sena Logo"
               className="w-[10rem] object-contain hover-scale transition-transform duration-300"
@@ -246,27 +259,35 @@ const WebsiteFooter = () => {
             </Link>
           </div>
         </div>
-        
+
         <div className="flex flex-col md:flex-row gap-10 md:gap-16">
           <div ref={linksRef} className="flex flex-col gap-3 text-white">
-            <h6 className="font-semibold text-lg text-gradient mb-2">Company</h6>
+            <h6 className="font-semibold text-lg text-gradient mb-2">
+              Company
+            </h6>
             <ul className="flex flex-col gap-3">
-              {routes.map(({ path, name }) => (
+              {websiteLinks.map(({ path, name }) => (
                 <li key={path} className="group">
                   <Link
                     to={path}
                     className="flex gap-2 items-center text-white/80 group-hover:text-primary transition-colors duration-200"
                   >
-                    <ChevronRight size={16} strokeWidth={3} className="text-primary transform group-hover:translate-x-1 transition-transform duration-200" />
+                    <ChevronRight
+                      size={16}
+                      strokeWidth={3}
+                      className="text-primary transform group-hover:translate-x-1 transition-transform duration-200"
+                    />
                     <span className="text-sm">{name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-          
+
           <div ref={contactRef} className="flex flex-col gap-3 text-white">
-            <h6 className="font-semibold text-lg text-gradient mb-2">Contact Us</h6>
+            <h6 className="font-semibold text-lg text-gradient mb-2">
+              Contact Us
+            </h6>
             <ul className="flex flex-col gap-4">
               <li className="max-w-[22rem] flex gap-3 text-white/80 hover:text-white transition-colors duration-200">
                 <MapPin
@@ -308,14 +329,17 @@ const WebsiteFooter = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Copyright section */}
-      <div ref={copyrightRef} className="wrapper mt-12 pt-6 border-t border-primary/20 flex flex-col md:flex-row justify-between items-center">
+      <div
+        ref={copyrightRef}
+        className="wrapper mt-12 pt-6 border-t border-primary/20 flex flex-col md:flex-row justify-between items-center"
+      >
         <p className="text-white/60 text-sm">
           © {new Date().getFullYear()} Code Sena. All rights reserved.
         </p>
-        
-        <button 
+
+        <button
           onClick={scrollToTop}
           className="mt-4 md:mt-0 flex items-center gap-2 text-white/60 hover:text-primary transition-colors duration-300"
         >

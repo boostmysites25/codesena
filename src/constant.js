@@ -1,18 +1,49 @@
 import logoImg from "./assets/logo/logo.png";
-import AboutUs from "./pages/AboutUs";
-import ContactUs from "./pages/ContactUs";
-import Home from "./pages/Home";
-import Services from "./pages/Services";
 
 // all services
-import { FaReact, FaNodeJs, FaDatabase, FaServer, FaMobileAlt, FaShieldAlt, FaCode, FaLaptopCode, FaApple, FaAndroid } from "react-icons/fa";
-import { MdDesignServices, MdWeb, MdDeveloperMode, MdSecurity, MdOutlineDesignServices } from "react-icons/md";
-import { SiFlutter, SiFirebase, SiNextdotjs, SiDjango, SiAmazonaws, SiMongodb, SiPostgresql, SiKotlin, SiDart } from "react-icons/si";
+import {
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaServer,
+  FaMobileAlt,
+  FaShieldAlt,
+  FaCode,
+  FaLaptopCode,
+  FaApple,
+  FaAndroid,
+} from "react-icons/fa";
+import {
+  MdDesignServices,
+  MdWeb,
+  MdDeveloperMode,
+  MdSecurity,
+  MdOutlineDesignServices,
+} from "react-icons/md";
+import {
+  SiFlutter,
+  SiFirebase,
+  SiNextdotjs,
+  SiDjango,
+  SiAmazonaws,
+  SiMongodb,
+  SiPostgresql,
+  SiKotlin,
+  SiDart,
+} from "react-icons/si";
 import { TbBrandReactNative, TbApi, TbDeviceMobile } from "react-icons/tb";
 import { AiFillSafetyCertificate, AiFillBug } from "react-icons/ai";
 import { BiUserCheck, BiPalette } from "react-icons/bi";
 import { IoIosApps } from "react-icons/io";
 import { GiArtificialIntelligence } from "react-icons/gi";
+import { lazy } from "react";
+
+const Home = lazy(() => import("./pages/Home"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
+const ContactUs = lazy(() => import("./pages/ContactUs"));
+const Services = lazy(() => import("./pages/Services"));
+const BlogListing = lazy(() => import("./pages/BlogListing"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail"));
 
 export { logoImg };
 
@@ -40,6 +71,16 @@ export const routes = [
     path: "/services",
     name: "Services",
     element: <Services />,
+  },
+  {
+    path: "/blogs",
+    name: "Blogs",
+    element: <BlogListing />,
+  },
+  {
+    path: "/blog/:slug",
+    name: "Blog Detail",
+    element: <BlogDetail />,
   },
   {
     path: "/contact-us",
@@ -168,7 +209,6 @@ export const appDevelopmentServices = [
   },
 ];
 
-
 // testimonials
 export const testimonials = [
   {
@@ -190,7 +230,6 @@ export const testimonials = [
     desc: "“We brought in Code Sena for a round of security testing before our public release—and we’re so glad we did. Their VAPT experts were thorough, explained everything in plain English, and helped us fix vulnerabilities we didn’t even know existed. Thanks to their work, we launched with confidence.”",
   },
 ];
-
 
 export const allServices = [
   {
@@ -487,36 +526,35 @@ export const allServices = [
   },
 ];
 
-
 // portfolio images (web development)
 export const webPortfolio = [
   {
     id: 1,
-    img: require('./assets/images/portfolio/web-development/5ghomes.webp'),
+    img: require("./assets/images/portfolio/web-development/5ghomes.webp"),
     title: "5g Homes",
     link: "https://5ghighspeedinternet.co",
   },
   {
     id: 2,
-    img: require('./assets/images/portfolio/web-development/cold-creekcap.webp'),
+    img: require("./assets/images/portfolio/web-development/cold-creekcap.webp"),
     title: "Cold Creekcap",
     link: "https://www.coldcreekcap.com",
   },
   {
     id: 3,
-    img: require('./assets/images/portfolio/web-development/think-reality.webp'),
+    img: require("./assets/images/portfolio/web-development/think-reality.webp"),
     title: "Think Reality",
     link: "https://thinkrealty.ae",
   },
   {
     id: 4,
-    img: require('./assets/images/portfolio/web-development/akash-mega-mart.webp'),
+    img: require("./assets/images/portfolio/web-development/akash-mega-mart.webp"),
     title: "Akash Mega Mart",
     link: "https://akashmegamart.com/",
   },
   {
     id: 5,
-    img: require('./assets/images/portfolio/web-development/midwam.webp'),
+    img: require("./assets/images/portfolio/web-development/midwam.webp"),
     title: "Midwam – Immersive Experience Design Company",
     link: "https://www.midwam.com/en/about",
   },
@@ -526,32 +564,32 @@ export const webPortfolio = [
 export const appPortfolio = [
   {
     id: 1,
-    img: require('./assets/images/portfolio/app-development/akash_mega_mart-app.webp'),
+    img: require("./assets/images/portfolio/app-development/akash_mega_mart-app.webp"),
     title: "Akash Mega Mart Mobile App",
     link: "https://play.google.com/store/apps/details?id=com.app.akash_mega_mart",
   },
   {
     id: 2,
-    img: require('./assets/images/portfolio/app-development/feelit_app.webp'),
+    img: require("./assets/images/portfolio/app-development/feelit_app.webp"),
     title: "FeelIt Mobile App",
     link: "https://play.google.com/store/apps/details?id=com.feelit.feelit_app",
   },
   {
     id: 3,
-    img: require('./assets/images/portfolio/app-development/klikomics.webp'),
+    img: require("./assets/images/portfolio/app-development/klikomics.webp"),
     title: "Klikomics Mobile App",
     link: "https://play.google.com/store/apps/details?id=com.klikomics.android&pcampaignid=web_share",
   },
   {
     id: 4,
-    img: require('./assets/images/portfolio/app-development/autosnap-app.webp'),
+    img: require("./assets/images/portfolio/app-development/autosnap-app.webp"),
     title: "AutoSnap Mobile App",
     link: "https://play.google.com/store/apps/details?id=com.Zigna.AutoSnap&pcampaignid=web_share",
   },
   {
     id: 5,
-    img: require('./assets/images/portfolio/app-development/rentop.webp'),
+    img: require("./assets/images/portfolio/app-development/rentop.webp"),
     title: "Rentop Bike and Car",
     link: "https://play.google.com/store/apps/details?id=com.rentop&pcampaignid=web_share",
-  },
+  },
 ];

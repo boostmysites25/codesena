@@ -2,11 +2,34 @@ import Drawer from "react-modern-drawer";
 import { Divide as Hamburger } from "hamburger-react";
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { logoImg, routes } from "../../constant";
+import { logoImg } from "../../constant";
 import { X } from "lucide-react";
 import { Helmet } from "react-helmet";
 import { gsap } from "gsap";
 import LogoFallback from "../ui/LogoFallback";
+
+export const websiteLinks = [
+  {
+    path: "/",
+    name: "Home",
+  },
+  {
+    path: "/about-us",
+    name: "About Us",
+  },
+  {
+    path: "/services",
+    name: "Services",
+  },
+  {
+    path: "/blogs",
+    name: "Blogs",
+  },
+  {
+    path: "/contact-us",
+    name: "Contact Us",
+  },
+];
 
 const WebsiteHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -154,7 +177,7 @@ const WebsiteHeader = () => {
             />
           </div>
           <div ref={navItemsRef} className="lg:flex items-center gap-10 hidden">
-            {routes
+            {websiteLinks
               .filter((option) => option.name !== "Contact Us")
               .map((option) => (
                 <Link
@@ -196,7 +219,7 @@ const WebsiteHeader = () => {
             </button>
           </div>
           <div className="flex flex-col gap-6">
-            {routes.map(({ name, path, id }) => (
+            {websiteLinks.map(({ name, path, id }) => (
               <Link
                 ref={addToMenuRefs}
                 onClick={() => setIsOpen(false)}
