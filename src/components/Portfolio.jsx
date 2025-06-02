@@ -14,7 +14,10 @@ const Portfolio = ({ page }) => {
     portfolioList = webPortfolio.slice(0, 3).concat(appPortfolio.slice(0, 3));
   }
   return (
-    <div className="py-[5rem] wrapper flex flex-col items-center gap-5">
+    <div
+      id="portfolio"
+      className="py-[5rem] wrapper flex flex-col items-center gap-5"
+    >
       <SubHeading heading="Our Portfolio" />
       <h2
         data-aos="fade-up"

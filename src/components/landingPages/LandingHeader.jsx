@@ -7,7 +7,6 @@ import { X } from "lucide-react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
-import LogoFallback from "../ui/LogoFallback";
 
 const options = [
   {
@@ -17,6 +16,10 @@ const options = [
   {
     name: "Services",
     path: "services",
+  },
+  {
+    name: "Portfolio",
+    path: "portfolio",
   },
   {
     name: "Contact Us",
@@ -182,7 +185,7 @@ const LandingHeader = () => {
               .map((option) => (
                 <Scroll
                   to={`${option.path}`}
-                  className="text-sm animated-underline transition-colors duration-300 hover:text-white"
+                  className="text-sm cursor-pointer animated-underline transition-colors duration-300 hover:text-white"
                   key={option.path}
                   spy={true}
                   smooth={true}
