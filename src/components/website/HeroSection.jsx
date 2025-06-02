@@ -124,20 +124,22 @@ const HeroSection = ({ bannerImg }) => {
       </div>
       
       {/* Hero content */}
-      <div ref={contentRef} className="wrapper text-center flex flex-col gap-6 justify-center items-center h-full relative z-10">
+      <div ref={contentRef} className="wrapper pt-12 text-center flex flex-col gap-6 justify-center items-center h-full relative z-10">
         <p ref={subtitleRef} className="sub-heading tracking-wider mb-2">
-          Welcome to 
-          {/* <span className="text-primary font-medium">Code Sena</span> */}
+          Transform Your Vision Into Reality
         </p>
         <h1 ref={titleRef} className="heading text-stroke font-bold tracking-tight">
-          Code Sena
+          Build Digital Products That Actually Work
         </h1>
         <p ref={taglineRef} className="sub-heading max-w-3xl mx-auto leading-relaxed">
-          We create digital products that deliver, scale & stay secure
+          From AI-powered systems to secure web platforms, we create digital solutions that scale with your business and deliver real results
         </p>
-        <div ref={ctaRef} className="mt-8">
-          <Link to="/services" className="primary-btn text-base px-8 py-4 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
-            Explore Our Services
+        <div ref={ctaRef} className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-md sm:max-w-none mx-auto">
+          <Link to="/contact-us" className="primary-btn text-sm sm:text-base px-6 sm:px-8 py-3 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 w-full sm:w-auto">
+            Start Your Project Today
+          </Link>
+          <Link to="/services" className="secondary-btn text-sm sm:text-base px-6 sm:px-8 py-3 border-2 border-primary/50 hover:border-primary text-primary-light hover:bg-primary/10 transition-all duration-300 w-full sm:w-auto">
+            View Our Services
           </Link>
         </div>
       </div>

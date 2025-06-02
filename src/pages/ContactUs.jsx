@@ -13,13 +13,26 @@ const ContactUs = () => {
   return (
     <>
       <WebsiteHeader />
-      <PageBanner title="Contact Us" />
+      <PageBanner 
+        title="Let's Build Something Amazing Together" 
+        desc="Ready to turn your vision into reality? Get in touch and let's discuss how we can help your business grow with the right technology"
+      />
       <div className="py-[3rem]">
         <div className="wrapper">
+          {/* Strong headline for contact section */}
+          <div className="text-center mb-8 sm:mb-12 px-4">
+            <h2 className="heading-2 mb-3 sm:mb-4">
+              Start Your Digital Transformation Today
+            </h2>
+            <p className="desc max-w-2xl mx-auto">
+              Whether you need a mobile app, web platform, or custom software solution, we're here to help you succeed.
+            </p>
+          </div>
+          
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
             <div
               data-aos="fade-up"
-              className="bg-tertiary flex flex-col gap-3 items-center justify-center rounded-xl p-5"
+              className="bg-tertiary flex flex-col gap-3 items-center justify-center rounded-xl p-5 hover:bg-tertiary/80 transition-all duration-300"
             >
               <MapPin
                 strokeWidth={2}
@@ -33,9 +46,9 @@ const ContactUs = () => {
             <Link
               to={`mailto:${companyDetails.email}`}
               data-aos="fade-up"
-              className="bg-tertiary flex flex-col gap-3 items-center justify-center rounded-xl p-5"
+              className="bg-tertiary flex flex-col gap-3 items-center justify-center rounded-xl p-5 hover:bg-tertiary/80 transition-all duration-300 group"
             >
-              <Mail strokeWidth={2} size={40} className="text-primary inline" />
+              <Mail strokeWidth={2} size={40} className="text-primary inline group-hover:scale-110 transition-transform" />
               <span className="text-center font-medium">
                 {companyDetails.email}
               </span>
@@ -43,12 +56,12 @@ const ContactUs = () => {
             <Link
               to={`tel:${companyDetails.phone}`}
               data-aos="fade-up"
-              className="bg-tertiary flex flex-col gap-3 items-center justify-center rounded-xl p-5"
+              className="bg-tertiary flex flex-col gap-3 items-center justify-center rounded-xl p-5 hover:bg-tertiary/80 transition-all duration-300 group"
             >
               <Phone
                 strokeWidth={2}
                 size={40}
-                className="text-primary inline"
+                className="text-primary inline group-hover:scale-110 transition-transform"
               />
               <span className="text-center font-medium">
                 {companyDetails.phone}

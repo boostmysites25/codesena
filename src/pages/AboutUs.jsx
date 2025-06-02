@@ -5,6 +5,7 @@ import SubHeading from "../components/SubHeading";
 import aboutImg1 from "../assets/images/aboutus-img1.webp";
 import aboutImg2 from "../assets/images/aboutus-img2.webp";
 import aboutImg3 from "../assets/images/home-about-img.jpeg";
+import { Link } from "react-router-dom";
 
 const TrustWorthySection = React.lazy(() =>
   import("../components/TrustWorthySection")
@@ -23,7 +24,10 @@ const AboutUs = () => {
   return (
     <>
       <WebsiteHeader />
-      <PageBanner title="About Us" />
+      <PageBanner 
+        title="About Code Sena" 
+        desc="We're not just developers—we're your technical partners in building products that grow with your business"
+      />
 
       <section className="text-white wrapper py-[3rem]">
         <div className="grid lg:grid-cols-2 gap-10 mt-7">
@@ -53,7 +57,7 @@ const AboutUs = () => {
                 />
               </div>
               <h2 className="heading-2 max-w-[60rem] mx-auto">
-                Transforming Visions into Technological Reality
+                Turning Big Ideas Into Working Digital Products
               </h2>
               <p className="desc">
                 At Code Sena, we help businesses turn big ideas into working
@@ -79,6 +83,30 @@ const AboutUs = () => {
                 enterprise-grade systems, we help you build smarter, scale
                 faster, and launch with confidence.
               </p>
+            </div>
+            
+            {/* CTA Section */}
+            <div className="mt-6 sm:mt-8 text-center lg:text-left">
+              <Link 
+                to="/contact-us" 
+                className="primary-btn inline-flex items-center group text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3"
+              >
+                Ready to Start Your Project?
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 sm:h-5 sm:w-5 ml-2 transform group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
@@ -113,10 +141,34 @@ const AboutUs = () => {
             </p>
 
             <div className="mt-6">
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center gap-2 mb-6">
                 <div className="h-1 w-3 bg-primary rounded-full"></div>
                 <div className="h-1 w-6 bg-primary rounded-full"></div>
                 <div className="h-1 w-12 bg-primary rounded-full"></div>
+              </div>
+              
+              {/* CTA for this section */}
+              <div className="text-center md:text-left">
+                <Link 
+                  to="/services" 
+                  className="primary-btn inline-flex items-center group text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3"
+                >
+                  Explore Our Services
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 sm:h-5 sm:w-5 ml-2 transform group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>

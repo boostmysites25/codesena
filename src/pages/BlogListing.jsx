@@ -6,6 +6,7 @@ import WebsiteFooter from "../components/website/WebsiteFooter";
 import DecorativeElements from "../components/ui/DecorativeElements";
 import { blogPosts } from "../data/blogData";
 import { FaCalendarAlt, FaClock, FaSearch, FaTags } from "react-icons/fa";
+import { ArrowRight } from "lucide-react";
 
 const BlogListing = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -43,8 +44,8 @@ const BlogListing = () => {
     <>
       <WebsiteHeader />
       <PageBanner
-        title="Our Blogs"
-        desc="Insights, tutorials, and industry perspectives from the Code Sena team"
+        title="Tech Insights & Industry Expertise"
+        desc="Stay ahead with our latest insights on web development, mobile apps, AI, and digital transformation strategies"
       />
 
       <section className="wrapper py-16 relative">
@@ -143,6 +144,31 @@ const BlogListing = () => {
             </button>
           </div>
         )}
+        
+        {/* Strong CTA Section */}
+        <div className="mt-12 sm:mt-16 text-center bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl p-6 sm:p-8 border border-primary/20">
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
+            Need Expert Help with Your Project?
+          </h3>
+          <p className="text-white/80 mb-4 sm:mb-6 max-w-2xl mx-auto text-sm sm:text-base">
+            Our team combines deep technical expertise with practical business insights. Let's discuss how we can help you build something amazing.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center max-w-md sm:max-w-none mx-auto">
+            <Link 
+              to="/contact-us" 
+              className="primary-btn inline-flex items-center group text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3 w-full sm:w-auto"
+            >
+              Start Your Project
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link 
+              to="/services" 
+              className="secondary-btn border-2 border-primary/50 hover:border-primary text-primary-light hover:bg-primary/10 transition-all duration-300 text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3 w-full sm:w-auto"
+            >
+              View Our Services
+            </Link>
+          </div>
+        </div>
       </section>
 
       <WebsiteFooter />

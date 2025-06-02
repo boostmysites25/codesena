@@ -49,18 +49,18 @@ const LandingPage = ({ page }) => {
         />
         <div
           data-aos="fade-up"
-          className="wrapper text-center flex flex-col gap-5 justify-center items-center h-full relative z-10"
+          className="wrapper text-center flex flex-col gap-4 sm:gap-5 justify-center items-center h-full relative z-10 px-4"
         >
-          <p className="text-xl">
+          <p className="text-lg sm:text-xl">
             Welcome to{" "}
             <span className="text-primary font-semibold">Code Sena</span>
           </p>
-          <h1 className="heading-1 text-stroke">
+          <h1 className="heading text-stroke">
             {isWebLanding
               ? "Web Solutions That Work Hard and Scale Smoothly"
               : "Mobile Apps That Feel Natural and Perform Flawlessly"}
           </h1>
-          <p className="sub-heading">
+          <p className="sub-heading max-w-3xl mx-auto">
             {isWebLanding
               ? "Crafting Websites That Stand Out & Drive Results"
               : "Developing Mobile Apps That Deliver Exceptional User Experiences"}

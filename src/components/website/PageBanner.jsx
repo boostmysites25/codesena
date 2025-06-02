@@ -89,7 +89,7 @@ const PageBanner = ({ title, desc, image = bannerImg, animationClass = "" }) => 
   return (
     <div
       ref={bannerRef}
-      className="w-full min-h-[70vh] h-fit py-[5rem] relative flex items-center justify-center overflow-hidden"
+      className="w-full min-h-[60vh] sm:min-h-[70vh] h-fit py-[3rem] sm:py-[5rem] relative flex items-center justify-center overflow-hidden"
     >
       {/* Background image with parallax effect */}
       <div ref={bgRef} className="absolute top-0 w-full h-full -z-10">
@@ -111,10 +111,10 @@ const PageBanner = ({ title, desc, image = bannerImg, animationClass = "" }) => 
       />
       
       <div className="w-full relative z-10">
-        <div className="wrapper text-center">
+        <div className="wrapper text-center pt-[1rem] sm:pt-[2rem] px-4">
           <h1 
             ref={titleRef} 
-            className={`heading-1 mb-6 ${animationClass} text-white`}
+            className={`heading-1 mb-4 sm:mb-6 ${animationClass} text-white`}
           >
             {title}
           </h1>
@@ -122,7 +122,7 @@ const PageBanner = ({ title, desc, image = bannerImg, animationClass = "" }) => 
           {desc && (
             <p 
               ref={descRef}
-              className={`desc mt-4 max-w-[55rem] mx-auto leading-relaxed ${animationClass}`}
+              className={`desc mt-3 sm:mt-4 max-w-[55rem] mx-auto leading-relaxed ${animationClass}`}
             >
               {desc}
             </p>
@@ -131,8 +131,8 @@ const PageBanner = ({ title, desc, image = bannerImg, animationClass = "" }) => 
           {/* Decorative line */}
           <div 
             ref={lineRef}
-            className={`h-1 bg-primary/70 mx-auto mt-8 rounded-full ${animationClass}`}
-            style={{ width: '6rem' }}
+            className={`h-1 bg-primary/70 mx-auto mt-6 sm:mt-8 rounded-full ${animationClass}`}
+            style={{ width: '4rem' }}
           ></div>
         </div>
       </div>
