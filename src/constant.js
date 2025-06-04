@@ -49,7 +49,7 @@ export { logoImg };
 
 export const companyDetails = {
   phone: "+919059009923",
-  address: "10-283/9/2/8/11 Vanin agar sec-bad, Hyderabad",
+  address: "10-284/9/2/b Malkajgiri, Hyderbad",
   email: "nikhilesh@codesena.com",
   linkedin: "",
   instagram: "",
