@@ -128,7 +128,7 @@ const ContactForm = () => {
               {...register("phone", {
                 required: "Phone number is required",
                 pattern: {
-                  value: /^[6-9]\d{9}$/i,
+                  value: /^\+?[\d\s\-()]{6,14}\d$/,
                   message: "Entered phone number is invalid",
                 },
               })}
